@@ -13,7 +13,7 @@
    <sql id="selectFields">id,content,title,user_id,create_date,comment_count</sql>
    
    <select id="getAllQuestion" resultMap="BaseResultMap">
-   			select <include refid="selectFields" />from question
+   			select <include refid="selectFields" />from question <if test="userId!=null">where user_id=#{userId}</if>
    </select>
    
    
